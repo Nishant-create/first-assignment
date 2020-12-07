@@ -16,6 +16,7 @@ winlose = False
 for numberofattempts in range(1, 7):
     number = input()
     number = int(number)
+    
     if(number > guessnumber):
         print("Well you went to high.")
 
@@ -24,7 +25,10 @@ for numberofattempts in range(1, 7):
     elif(number == guessnumber):
         winlose = True
         break
+
 if(winlose == False):
     print("You lose,booooooooooooooooooooooooooooooooooo!")
 elif(winlose == True):
     print("Good Job!, you guessed the number in " + str(numberofattempts) + " attempts")
+    print("press enter key to exit")
+    toxit = input()

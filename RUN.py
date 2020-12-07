@@ -17,11 +17,11 @@ def fun():
             print("Fast")
         else:
             print("No you have to take something")
-        while(ans != 'Tea')or(ans != 'Coffee'):
+        while((ans != 'Tea'and ans != 'Coffee')):
             print("Invalid input plz try again")
             ans = input()
     elif(answer == 'ALIEN'):
         print("You Alien Get Out Of Here")
-while(answer != 'HUMAN')or(answer != 'ALIEN'):
+while((answer != 'HUMAN'and answer != 'ALIEN')):
     print('Invalid input plz try again')
     answer = input()
