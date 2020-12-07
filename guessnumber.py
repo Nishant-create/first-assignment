@@ -13,7 +13,7 @@ print("Can you Guess the number????")
 
 winlose = False
 
-for numberofattempts in range(1, 7):
+for numberofattempts in range(1, 9):
     number = input()
     number = int(number)
     
@@ -28,6 +28,8 @@ for numberofattempts in range(1, 7):
 
 if(winlose == False):
     print("You lose,booooooooooooooooooooooooooooooooooo!")
+    print("press any key to exit")
+    roxit = input()
 elif(winlose == True):
     print("Good Job!, you guessed the number in " + str(numberofattempts) + " attempts")
     print("press enter key to exit")
