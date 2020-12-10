@@ -32,6 +32,6 @@ if(winlose == False):
     print("press any key to exit")
     roxit = input()
 elif(winlose == True):
-    print("Good Job!, you guessed the number in " + str(numberofattempts) + " attempts")
+    print("Good Job!, you guessed the number in " + str(numberofattempts) + " attempts.")
     print("press enter key to exit")
     toxit = input()
