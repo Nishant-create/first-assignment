@@ -1,6 +1,7 @@
 import random
 
 numberofattempts = 0
+print("Choose your difficulty")
 
 print("Hello, player What's your name")
 name = input()
