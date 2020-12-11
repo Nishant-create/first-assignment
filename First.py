@@ -19,13 +19,14 @@ print("How many attempts do you want?")
 number = input()
 number = int(number)
 
-print("How much range do you want?")
-print("please enter only Smallest number of range")
+print("How much range do you want???")
+print("Please enter only the Smallest number of range")
 
 smallrange = input()
 smallrange = int(smallrange)
 
 print("please enter only Highest number of range")
+
 highrange = input()
 highrange = int(highrange)
 
