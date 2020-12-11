@@ -1,7 +1,11 @@
 
-import random
+import random 
+
+
 
 numberofattempts = 0
+
+
 
 print("Welcome player")
 print("Let me introduce you to the game.")
@@ -9,11 +13,15 @@ print("This is a Guess the Number type game, so the machine will randomly genera
 print("you have a limited number of chances to guess the number,the game will give you hints")
 print("on your every guess, I hope you have understood the game, so go enjoy....")
 print("Oh! I forgot to ask your name.")
+
 name = input()
+
 print("Nice to meet you " + str(name))
 print("Ready to start the game??")
 print("Press enter to continue")
+
 start = input()
+
 print("How many attempts do you want?")
 
 number = input()
@@ -32,6 +40,8 @@ highrange = int(highrange)
 
 guessnumber = random.randint(int(smallrange),int(highrange))
 
+winlose = False
+
 print("Your game starts now, Good Luck ;)")
 
 for numberofattempts in range(1,int(number)):
@@ -45,4 +55,14 @@ for numberofattempts in range(1,int(number)):
         print("You went too Low")
 
     elif(guess == guessnumber):
-        print("Good Job, you guessed the number in " + str(numberofattempts) + " attempts")
+        winlose = True
+        break
+
+if(winlose=True):
+    print("Good Job, you guessed the number in " + str(numberofattempts) + " attempts")
+    print("Press enter to exit...")
+    roxit = input()
+else:
+    print("You Loser get out of Here")
+    print("press enter to exit...^~^")
+    toxit = input()
