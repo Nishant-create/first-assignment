@@ -58,7 +58,7 @@ for numberofattempts in range(1,int(number)):
         winlose = True
         break
 
-if(winlose=True):
+if(winlose==True):
     print("Good Job, you guessed the number in " + str(numberofattempts) + " attempts")
     print("Press enter to exit...")
     roxit = input()
