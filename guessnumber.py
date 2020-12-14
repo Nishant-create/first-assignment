@@ -18,19 +18,26 @@ for numberofattempts in range(1, 9):
     number = int(number)
     
     if(number > guessnumber):
-        print("Well you went to high.")
+        print("Well you went tooo high.")
 
     elif(number < guessnumber):
-        print("Well you went to Low.")
+        print("Well you went tooo Low.")
     elif(number == guessnumber):
         winlose = True
         break
 
 if(winlose == False):
-    print("You lose,booooooooooooooooooooooooooooooooooo!")
+    print("You lose,booo!")
     print("press any key to exit")
     roxit = input()
 elif(winlose == True):
     print("Good Job!, you guessed the number in " + str(numberofattempts) + " attempts")
     print("press enter key to exit")
     toxit = input()
+
+
+
+
+
+
+
