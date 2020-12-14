@@ -60,8 +60,8 @@ def game():
         print("Press enter to exit...")
         roxit = input()
     else:
-        print("You Loser get out of Here")
-        print("press enter to exit...^~^")
+        print("Better luck next time")
+        print("press enter to exit...")
         toxit = input()
 
 intro()
