@@ -40,6 +40,14 @@ def game():
 
     winlose = False
 
+    while(highrange < number):
+        print("Caught you, cheeky little thing.")
+        print("Only one more chance play honestly.")
+        print("Enter your attempts again")
+        number = input()
+        number = int(number)
+        
+
     print("Your game starts now, Good Luck ;)")
 
     for numberofattempts in range(1,int(number)):
