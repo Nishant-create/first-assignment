@@ -1,7 +1,7 @@
 def deaf():
     if(ans == 'Tea')or(ans == 'tea'):
         print("Ramukaka 2 chay lana")
-        print('Jaldi')
+        print('Jalddi')
     elif(ans == 'Coffee')or(ans == 'coffee'):
         print("Steve 2 Coffees,please!")
         print("Fast")
