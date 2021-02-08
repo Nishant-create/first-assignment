@@ -78,4 +78,3 @@ game()
 
 
 
-git config --global user.name "Nishant-create"
