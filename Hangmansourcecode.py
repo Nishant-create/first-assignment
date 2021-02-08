@@ -16,6 +16,8 @@ def Delaybetweencharacters():
 
 def IntroFunction():
     global text
+
+    
     text = ("""Hey, its game time.
     today we have planned to play a game known as HANGMAN. Its a bit high level game from our Guessnumber Game.
     So,get ready. In this game you have to guess a word letter by letter. \nNow the interesting thing starts, the word is randomly generated and if you can't guess he word until the hanging man is completely drawn.
