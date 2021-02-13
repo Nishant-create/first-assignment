@@ -13,8 +13,8 @@ Hangman_ascii = ["""
          |
          |
          |
-        ===""","""
-        """
+       _===_""","""
+        """]
 
 def IntroFunction():
 

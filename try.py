@@ -1,4 +1,39 @@
 import random
 
-lists = ['a','ab','abc','abcd']
-print(random.choice(lists))
+lists = '''
+\n
+     +-----+\n
+    {     :\n
+    }     :\n
+    {     :\n
+    O     :\n
+   /:\    :\n
+  / : \   :\n
+    :     :\n
+  / : \   :\n
+ /     \  :\n
+          :\n
+          :\n
+          :\n
+          :\n
+        =====\n ''','''ab''','abc','abcd'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print(lists)
