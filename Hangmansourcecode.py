@@ -1,6 +1,6 @@
 import time 
 import random
-
+global Hangman_ascii
 Hangman_ascii = ["""  
 +=========+
          |
