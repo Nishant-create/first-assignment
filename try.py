@@ -1,11 +1,12 @@
 import random
 
-lists =u'''
-\n
+list_of_Hangman_ascii =['''\
+
     +-----+
     {     :
     }     :
-    {     :
+    {     :\n''',
+'''\
     O     :
    /:\    :
   / : \   :
@@ -15,24 +16,8 @@ lists =u'''
           :
           :
           :
-        ==== ''','''ab''','abc','abcd'
+        =====\n''']
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-print(lists)
+for item in lists:
+  print(item,end='') 

@@ -54,7 +54,7 @@ def SettingsFunction():
     global answer
     answer = input()
     if (answer == 'a'):
-        print('done')
+        EasyFunction()
     elif (answer == 'b'):
         print('done')
     elif (answer == 'c'):
@@ -85,11 +85,14 @@ def EasyFunction():
     for c in text:
         sec = "0.0" + str(random.randrange(1, 5, 1))
         sec = float(sec)
-        print(c,end='',time.sleep(sec))
+        print(c,end=''),time.sleep(sec)
 
     wordslist = ['cape','ant','fun','run','man','rush','ruby','four','two','one','rub','gun','lion','wolf','pig','cow','sit','fit','lit','knit','shot','mop','lot','node','word','pass','top','down','cold','net','wet','rat','mop','vote']
-    print(random.choice())
-    
+    selectedword = (random.choice(wordslist))
+    print("\n")
+    for c in range(0,len(selectedword)):
+
+        print("_",end=' ')
 
 IntroFunction()
 SettingsFunction()
