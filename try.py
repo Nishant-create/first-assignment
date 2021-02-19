@@ -1,5 +1,5 @@
 import random
-
+nothing = "Warnings"
 list_of_Hangman_ascii =['''\
 
     +-----+
@@ -20,5 +20,5 @@ list_of_Hangman_ascii =['''\
 
 
 for item in list_of_Hangman_ascii:
-  print(item,end='') 
-  
+  print(item)
+

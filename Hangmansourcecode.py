@@ -14,7 +14,17 @@ Hangman_ascii = ["""
          |
          |
        _===_""","""
-        """]
++=========+
+         |
+         |
+         |
+         |
+         |
+         |
+         |
+         |
+         |
+       _===_         """]
 
 def IntroFunction():
 
@@ -81,7 +91,8 @@ def LoopFunction():
         SettingsFunction() 
 
 def EasyFunction():
-    text = """So, let's start the game"""
+    numberofguesses = 0
+    text = "So, let's start the game"
     for c in text:
         sec = "0.0" + str(random.randrange(1, 5, 1))
         sec = float(sec)
@@ -91,8 +102,10 @@ def EasyFunction():
     selectedword = (random.choice(wordslist))
     print("\n")
     for c in range(0,len(selectedword)):
-
         print("_",end=' ')
-
+    guessedword = input()
+    for 
+    printstatement = ""
+    
 IntroFunction()
 SettingsFunction()
