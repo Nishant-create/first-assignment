@@ -1,7 +1,10 @@
 import time 
 import random
+import secrets
+
+
 global Hangman_ascii
-Hangman_ascii = ["""  
+Hangman_ascii_easy = ['''\  
 +=========+
          |
          |
@@ -13,8 +16,9 @@ Hangman_ascii = ["""
          |
          |
          |
-       _===_""","""
+       _===_\n''','''\
 +=========+
+O        |
          |
          |
          |
@@ -23,8 +27,42 @@ Hangman_ascii = ["""
          |
          |
          |
-         |
-       _===_         """]
+       _===_\n''','''\
+       +========+
+       O       |
+      /|\      |
+               |
+               |
+               |
+               |
+               |
+               |
+               |
+             _===_\n''','''\
+             +========+
+             O       |
+            /|\      |
+             |       |
+                     |
+                     |
+                     |
+                     |
+                     |
+                     |
+                     |
+                   _===_\n''','''\
+                   +==========+
+                   O         |
+                  /|\        |
+                  /|\        |
+                             |
+                             |
+                             |
+                             |
+                             |
+                             |
+                             |
+                           _===_\n''']
 
 def IntroFunction():
 
@@ -103,9 +141,39 @@ def EasyFunction():
     print("\n")
     for c in range(0,len(selectedword)):
         print("_",end=' ')
-    guessedword = input()
-    for 
-    printstatement = ""
     
-IntroFunction()
-SettingsFunction()
+    printstatement = "\n\n\nGuess a letter\n "
+
+    for c in printstatement:
+        sec = "0.0" + str(random.randrange(1, 5, 1))
+        sec = float(sec)
+        print(c,end=''),time.sleep(sec)
+
+    guessofplayer = input()
+
+
+    for numberofguesses in range(0,len(Hangman_ascii_easy)):
+        if guessofplayer != selectedword:
+            WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers ","no es la respuesta correcta","nu răspunsul corect","正しい答えではありません","不正确的答案","정답이 아니다","niet het juiste antwoord","pas la bonne réponse","όχι η σωστή απάντηση","non è la risposta giusta","не правильный ответ","ليس الجواب الصحيح","صحیح جواب نہیں","ਸਹੀ ਜਵਾਬ ਨਹੀਂ","सही उत्तर नहीं","ius responsum non"]
+            print(secrets.choice(WrongAnswerList))
+
+    
+EasyFunction()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
