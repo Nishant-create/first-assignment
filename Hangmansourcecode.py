@@ -3,7 +3,7 @@ import random
 import secrets
 
 
-global Hangman_ascii
+global Hangman_ascii_easy
 Hangman_ascii_easy = ['''\  
 +=========+
          |
@@ -149,14 +149,15 @@ def EasyFunction():
         sec = float(sec)
         print(c,end=''),time.sleep(sec)
 
-    guessofplayer = input()
-
-
     for numberofguesses in range(0,len(Hangman_ascii_easy)):
-        if guessofplayer != selectedword:
-            WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers ","no es la respuesta correcta","nu răspunsul corect","正しい答えではありません","不正确的答案","정답이 아니다","niet het juiste antwoord","pas la bonne réponse","όχι η σωστή απάντηση","non è la risposta giusta","не правильный ответ","ليس الجواب الصحيح","صحیح جواب نہیں","ਸਹੀ ਜਵਾਬ ਨਹੀਂ","सही उत्तर नहीं","ius responsum non"]
-            print(secrets.choice(WrongAnswerList))
 
+        guessofplayer = input()
+
+
+        if guessofplayer :
+            WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers ","no es la respuesta correcta","nu răspunsul corect","正しい答えではありません","不正确的答案","정답이 아니다","niet het juiste antwoord","pas la bonne réponse","όχι η σωστή απάντηση","non è la risposta giusta","не правильный ответ","ليس الجواب الصحيح","صحیح جواب نہیں","ਸਹੀ ਜਵਾਬ ਨਹੀਂ","सही उत्तर नहीं","ius responsum non"]
+            print(secrets.choice(WrongAnswerList)),range(0, 1)
+            # also have to draw the hangman but don't know how to draw it
     
 EasyFunction()
 
