@@ -65,9 +65,9 @@ O        |
                            _===_\n''']
 
 def IntroFunction():
-
+# This Function will let the player know that what program even is this. 
     text = ("""\n Hey! its Game Time,\nToday we are going to play a game known as HANGMAN. Its a bit high level game from our Guessnumber game.\nIn this game you have to guess a word letter by letter, a hanging man will be drawn side by side on your every incorrect guess.\nand you will lose when the hanging man is completely drawn unless you have guessed the word.\nSo, GooD Luck and enjoy the game """)
-    
+    # this thing or you can say FOR loop will make the text appear like anyone is typing it superfast.
     for c in text:
         sec = "0.0" + str(random.randrange(1, 3, 1))
         sec = float(sec)
@@ -75,6 +75,7 @@ def IntroFunction():
 
     pri = ("""\nSo, lets start with some basic game things.
     What's your name ?:-""")
+    # you will see it after every "string" variable.
     for c in pri:
         sec = "0.0" + str(random.randrange(1, 3, 1))
         sec = float(sec)
@@ -82,18 +83,18 @@ def IntroFunction():
 
     global name
     name = input()
-
-    int = ("Bonito Nombre niño ")
-    for c in int:
+#  You can't understand it because its written in Spanish.
+    Text = ("Bonito Nombre niño ")
+    for c in Text:
         sec = "0." + str(random.randrange(1, 3, 1))
         sec = float(sec)
         print(c,end=''),time.sleep(sec)
 
 def SettingsFunction():
-    
+    # This Function will let the player choose his difficulty. 
     text = """
     Choose Difficulty:-\n(a) Easy\n(b) Intermediate\n(c) Hard\n(d) Pro\n(e) Master\n
-    Note:- Please write only a single word like a,b,c,d,e. Don't write brackets or the full name of difficulty\n"""
+    Note:- Please write full name of difficulty, and don't toggle the case of letters. \n"""
     for c in text:
         sec = "0.0" + str(random.randrange(1, 5, 1))
         sec = float(sec)
@@ -101,15 +102,15 @@ def SettingsFunction():
 
     global answer
     answer = input()
-    if (answer == 'a'):
+    if (answer == 'easy') or (answer == 'Easy') or (answer == 'EASY'):
         EasyFunction()
-    elif (answer == 'b'):
+    elif (answer == 'intermediate') or (answer == 'Intermediate') or (answer == 'INTERMEDIATE'):
         print('done')
-    elif (answer == 'c'):
+    elif (answer == 'hard') or (answer == 'Hard') or (answer == 'HARD'):
         print('done')
-    elif (answer == 'd'):
+    elif (answer == 'pro') or (answer == 'Pro') or (answer == 'PRO'):
         print('done')
-    elif (answer == 'e'):
+    elif (answer == 'master') or (answer == 'Master') or (answer == 'MASTER'):
         print('done')
 
     else:
@@ -129,8 +130,11 @@ def LoopFunction():
         SettingsFunction() 
 
 def EasyFunction():
+
+    global answer
+
     numberofguesses = 0
-    text = "So, let's start the game"
+    text = "So, let's start your " +   game"
     for c in text:
         sec = "0.0" + str(random.randrange(1, 5, 1))
         sec = float(sec)
@@ -154,7 +158,7 @@ def EasyFunction():
         guessofplayer = input()
 
 
-        if guessofplayer :
+        if guessofplayer  :
             WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers ","no es la respuesta correcta","nu răspunsul corect","正しい答えではありません","不正确的答案","정답이 아니다","niet het juiste antwoord","pas la bonne réponse","όχι η σωστή απάντηση","non è la risposta giusta","не правильный ответ","ليس الجواب الصحيح","صحیح جواب نہیں","ਸਹੀ ਜਵਾਬ ਨਹੀਂ","सही उत्तर नहीं","ius responsum non"]
             print(secrets.choice(WrongAnswerList)),range(0, 1)
             # also have to draw the hangman but don't know how to draw it
