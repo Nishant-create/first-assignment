@@ -65,16 +65,16 @@ def game():
             break
     if(winlose==True):
         print("Good Job, you guessed the number in " + str(numberofattempts) + " attempts")
-        print("Press enter to exit...")
-        roxit = input()
+        
     else:
         print("Better luck next time")
-        print("press enter to exit...")
-        toxit = input()
+        
+
+def pause():
+    print("you completed the game")
+    pauseTheProgram = input("press <ENTER> key to continue")
 
 intro()
-
 game()
-
-
+pause()
 
