@@ -10,11 +10,11 @@ def GameExplainingFunction():
         seconds = float("0.0" + str(random.randrange( 1, 5 , 1)))
         print(EveryCharacter,end=''),time.sleep(seconds)
 
-    Text ="So, what's your name ?"
+    Text =str("So, what's your name ?")
 
     for EveryCharacter in Text:
         seconds = float("0.0" + str(random.randrange( 1, 5, 1)))    
         print(EveryCharacter,end=''),time.sleep(seconds) 
-        
+
        
-def RandomGenerator():       
+def RandomGenerator():

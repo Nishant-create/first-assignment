@@ -30,7 +30,18 @@ O        |
        _===_\n''','''\
        +========+
        O       |
-      /|\      |
+      /        |
+               |
+               |
+               |
+               |
+               |
+               |
+               |
+             _===_\n''','''
+       +========+
+       O       |
+      / \      |
                |
                |
                |
@@ -42,7 +53,7 @@ O        |
              +========+
              O       |
             /|\      |
-             |       |
+                     |
                      |
                      |
                      |
@@ -54,7 +65,19 @@ O        |
                    +==========+
                    O         |
                   /|\        |
+                  /          |
+                             |
+                             |
+                             |
+                             |
+                             |
+                             |
+                             |
+                           _===_\n''','''
+                   +==========+
+                   O         |
                   /|\        |
+                  / \        |
                              |
                              |
                              |
@@ -62,7 +85,7 @@ O        |
                              |
                              |
                              |
-                           _===_\n''']
+                           _===_\n''',]
 
 def IntroFunction():
 # This Function will let the player know that what program even is this. 
@@ -113,7 +136,7 @@ def SettingsFunction():
     elif (answer == 'master') or (answer == 'Master') or (answer == 'MASTER'):
         print('done')
 
-    else:
+    elif (answer != 'easy') or (answer != 'Easy') or (answer != 'EASY') or (answer != 'intermediate') or (answer != 'Intermediate') or (answer != 'INTERMEDIATE') or (answer != 'hard') or (answer != 'Hard') or (answer != 'HARD') or (answer != 'pro') or (answer != 'Pro') or (answer != 'PRO') or (answer != 'master') or (answer != 'Master') or (answer != 'MASTER'):
         prit = "((Error)Invalid input) please read the note written with the question."
         for c in prit:
             sec = "0.0" + str(random.randrange(1, 5, 1))
@@ -126,21 +149,22 @@ def LoopFunction():
 
     global answer
 
-    while(answer != 'a' and answer != 'b' and answer != 'c' and answer != 'd' and answer != 'e'):
+    while:(answer != 'easy') and (answer != 'Easy') and (answer != 'EASY') and (answer != 'intermediate') and (answer != 'Intermediate') and (answer != 'INTERMEDIATE') and (answer != 'hard') and (answer != 'Hard') and (answer != 'HARD') and (answer != 'pro') and (answer != 'Pro') and (answer != 'PRO') and (answer != "master") and (answer != 'Master') and (answer != 'MASTER'):
         SettingsFunction() 
 
 def EasyFunction():
 
-    global answer
-
     numberofguesses = 0
-    text = "So, let's start your " +   game"
+
+    global answer
+    
+    text = "So, let's start your game."
     for c in text:
         sec = "0.0" + str(random.randrange(1, 5, 1))
         sec = float(sec)
         print(c,end=''),time.sleep(sec)
 
-    wordslist = ['cape','ant','fun','run','man','rush','ruby','four','two','one','rub','gun','lion','wolf','pig','cow','sit','fit','lit','knit','shot','mop','lot','node','word','pass','top','down','cold','net','wet','rat','mop','vote']
+    wordslist = ['cap','ant','fun','run','man','rub','fur','two','one','gun','pig','cow','sit','fit','lit','kit','hot','mop','lot','war','top','don','cod','net','wet','rat','mop']
     selectedword = (random.choice(wordslist))
     print("\n")
     for c in range(0,len(selectedword)):
@@ -160,9 +184,15 @@ def EasyFunction():
 
         if guessofplayer  :
             WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers ","no es la respuesta correcta","nu răspunsul corect","正しい答えではありません","不正确的答案","정답이 아니다","niet het juiste antwoord","pas la bonne réponse","όχι η σωστή απάντηση","non è la risposta giusta","не правильный ответ","ليس الجواب الصحيح","صحیح جواب نہیں","ਸਹੀ ਜਵਾਬ ਨਹੀਂ","सही उत्तर नहीं","ius responsum non"]
-            print(secrets.choice(WrongAnswerList)),range(0, 1)
+            WrongAnswerVaraiable = print(secrets.choice(WrongAnswerList)),range(0, 1)
             # also have to draw the hangman but don't know how to draw it
-    
+        for c in WrongAnswerVaraiable:
+            sec = "0.0" + str(random.randrange( 1, 5 ,1))
+            sec = float(sec)
+            print(c,end=''),time.sleep(sec)
+
+
+SettingsFunction()
 EasyFunction()
 
 
