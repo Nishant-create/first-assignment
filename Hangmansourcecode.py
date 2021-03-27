@@ -149,7 +149,7 @@ def LoopFunction():
 
     global answer
 
-    while:(answer != 'easy') and (answer != 'Easy') and (answer != 'EASY') and (answer != 'intermediate') and (answer != 'Intermediate') and (answer != 'INTERMEDIATE') and (answer != 'hard') and (answer != 'Hard') and (answer != 'HARD') and (answer != 'pro') and (answer != 'Pro') and (answer != 'PRO') and (answer != "master") and (answer != 'Master') and (answer != 'MASTER'):
+    while (answer != 'easy') and (answer != 'Easy') and (answer != 'EASY') and (answer != 'intermediate') and (answer != 'Intermediate') and (answer != 'INTERMEDIATE') and (answer != 'hard') and (answer != 'Hard') and (answer != 'HARD') and (answer != 'pro') and (answer != 'Pro') and (answer != 'PRO') and (answer != "master") and (answer != 'Master') and (answer != 'MASTER'):
         SettingsFunction() 
 
 def EasyFunction():
@@ -176,25 +176,24 @@ def EasyFunction():
         sec = "0.0" + str(random.randrange(1, 5, 1))
         sec = float(sec)
         print(c,end=''),time.sleep(sec)
-           
-    Guess = input()
-    Guess = str(Guess)
-    Guess = Guess.lower()
 
     Wrong = int(0)
 
     for numberofguesses in range(0,len(Hangman_ascii)):
 
-        find = selectedword.find(Guess)
+        Guess = input()
+        Guess = str(Guess)
+        Guess = Guess.lower()
+
+        find = selectedword.find(Guess)                                              
         
-        if  (Find == int(-1)):
+        if  (find == int(-1)):
             WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers ","no es la respuesta correcta","nu răspunsul corect","正しい答えではありません","不正确的答案","정답이 아니다","niet het juiste antwoord","pas la bonne réponse","όχι η σωστή απάντηση","non è la risposta giusta","не правильный ответ","ليس الجواب الصحيح","صحیح جواب نہیں","ਸਹੀ ਜਵਾਬ ਨਹੀਂ","सही उत्तर नहीं","ius responsum non"]
             WrongAnswerVariable = print(secrets.choice(WrongAnswerList)),range(0, 1)
             WrongAnswer = Wrong + 1
-
-            Hangman_ascii_indexes = 
+            Wrong = WrongAnswer
             
-        elif (Find == int(0)) or (Findd == int(1)) or (Find == int(2)):
+        elif (find == int(0)) or (find == int(1)) or (find == int(2)):
             CorrectAnswerText = "That' a Correct one"
 
         for c in WrongAnswerVariable:
@@ -207,9 +206,8 @@ def EasyFunction():
             print(c,end=''),time.sleep(sec)
 
 
-
+IntroFunction()
 SettingsFunction()
-EasyFunction()
 
 
 
