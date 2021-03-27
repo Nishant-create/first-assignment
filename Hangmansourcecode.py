@@ -3,8 +3,8 @@ import random
 import secrets
 import string
 
-global Hangman_ascii_easy
-Hangman_ascii_easy = ['''\  
+global Hangman_ascii
+Hangman_ascii = ['''\  
 +=========+
          |
          |
@@ -163,36 +163,49 @@ def EasyFunction():
         sec = "0.0" + str(random.randrange(1, 5, 1))
         sec = float(sec)
         print(c,end=''),time.sleep(sec)
-
-    Guessedword = input()
-    Guessedword = str(Guessedword)
-    CorrectedGuessedword  = Guesssedword.upper()
-
+  
     wordslist = ['cap','ant','fun','run','man','rub','fur','two','one','gun','pig','cow','sit','fit','lit','kit','hot','mop','lot','war','top','don','cod','net','wet','rat','mop']
-    selectedword = (random.choice(wordslist))
+    selectedword = (secrets.choice(wordslist))
     print("\n\n")
     for c in range(0,len(selectedword)):
         print("_",end=' ')
     
     printstatement = "\n\n\nGuess a letter\n "
-
+                 
     for c in printstatement:
         sec = "0.0" + str(random.randrange(1, 5, 1))
         sec = float(sec)
         print(c,end=''),time.sleep(sec)
+           
+    Guess = input()
+    Guess = str(Guess)
+    Guess = Guess.lower()
 
-    for numberofguesses in range(0,len(Hangman_ascii_easy)):
+    Wrong = int(0)
 
-        find = selectedword.find(Guessedword)
+    for numberofguesses in range(0,len(Hangman_ascii)):
+
+        find = selectedword.find(Guess)
         
-        if guessofplayer  :
+        if  (Find == int(-1)):
             WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers ","no es la respuesta correcta","nu răspunsul corect","正しい答えではありません","不正确的答案","정답이 아니다","niet het juiste antwoord","pas la bonne réponse","όχι η σωστή απάντηση","non è la risposta giusta","не правильный ответ","ليس الجواب الصحيح","صحیح جواب نہیں","ਸਹੀ ਜਵਾਬ ਨਹੀਂ","सही उत्तर नहीं","ius responsum non"]
-            WrongAnswerVaraiable = print(secrets.choice(WrongAnswerList)),range(0, 1)
-        
-        for c in WrongAnswerVaraiable:
+            WrongAnswerVariable = print(secrets.choice(WrongAnswerList)),range(0, 1)
+            WrongAnswer = Wrong + 1
+
+            Hangman_ascii_indexes = 
+            
+        elif (Find == int(0)) or (Findd == int(1)) or (Find == int(2)):
+            CorrectAnswerText = "That' a Correct one"
+
+        for c in WrongAnswerVariable:
             sec = "0.0" + str(random.randrange( 1, 5 ,1))
             sec = float(sec)
             print(c,end=''),time.sleep(sec)
+        for c in CorrectAnswerText:
+            sec = "0.0" + str(random.choice( 1, 5, 1))
+            sec = int(sec)
+            print(c,end=''),time.sleep(sec)
+
 
 
 SettingsFunction()
