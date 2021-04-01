@@ -52,7 +52,7 @@ a = input()
 
 w = 0
 
-for item in range( 0, 100000000000000000):
+for item in range( 0, 100):
 
     if(a != "s"):
         d = w + 1
