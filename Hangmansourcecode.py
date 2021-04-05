@@ -203,10 +203,6 @@ def EasyFunction():
                 sec = float(sec)
                 print(char,end=''),time.sleep(sec)
 
--        for c in WrongAnswerVariable:
-            sec = "0.0" + str(random.randrange( 1, 5 ,1))
-            sec = float(sec)
-            print(c,end=''),time.sleep(sec)
 
 
 EasyFunction()
