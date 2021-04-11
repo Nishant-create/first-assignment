@@ -1,63 +1,8 @@
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-# Do not try to run it
-a = input()
+string = 'Nishant'
+index = 3
+print(string[:index])
+# tempList = list(string)
+# for item in range(0,index):
+#     print(tempList[item],end='')
 
-w = 0
 
-for item in range( 0, 100):
-
-    if(a != "s"):
-        d = w + 1
-        print(d)
-        w = d
-
-    if(a == 's'):
-        print('loser kahin ka')    

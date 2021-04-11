@@ -167,8 +167,9 @@ def EasyFunction():
     wordslist = ['cap','ant','fun','run','man','rub','fur','two','one','gun','pig','cow','sit','fit','lit','kit','hot','mop','lot','war','top','don','cod','net','wet','rat','mop']
     selectedword = (secrets.choice(wordslist))
     print("\n\n")
-    for c in range(0,len(selectedword)):
-        print("_",end=' ')
+    emptyString =  "***"
+    print(emptyString)
+ 
     
     printstatement = "\n\n\nGuess a letter\n "
                  
@@ -193,17 +194,18 @@ def EasyFunction():
 
             WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers ","no es la respuesta correcta","nu răspunsul corect","正しい答えではありません","不正确的答案","정답이 아니다","niet het juiste antwoord","pas la bonne réponse","όχι η σωστή απάντηση","non è la risposta giusta","не правильный ответ","ليس الجواب الصحيح","صحیح جواب نہیں","ਸਹੀ ਜਵਾਬ ਨਹੀਂ","सही उत्तर नहीं","ius responsum non"]
             WrongAnswerVariable = print(secrets.choice(WrongAnswerList)),range(0, 1)
-            WrongAnswer = Wrong + 1
-            Wrong = WrongAnswer
+            print(Hangman_ascii[Wrong])
+            Wrong = Wrong + 1
             
-        elif (find == int(0)) or (find == int(1)) or (find == int(2)):
+        else:
             CorrectAnswerText = "That' a Correct one"
-            for char in CorrectAnswerText:
-                sec = "0.0" + str(random.randrange( 1, 5, 1))
-                sec = float(sec)
-                print(char,end=''),time.sleep(sec)
+            print(CorrectAnswerText)
+            # templist = list(emptyString)
+            # templist[find] = Guess
+            # emptyString = "".join(templist)
+            # print(emptyString)
 
-
+            
 
 EasyFunction()
 
