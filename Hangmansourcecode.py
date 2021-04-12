@@ -3,6 +3,7 @@ import random
 import secrets
 import string
 
+
 global Hangman_ascii
 Hangman_ascii = ['''\  
 +=========+
@@ -87,41 +88,34 @@ O        |
                              |
                            _===_\n''',]
 
+def slowPrint(text):
+    for c in text:
+        sec = float("0.0" + str(random.randrange( 1, 5, 1)))
+        print(c,end=''),time.sleep(sec)                           
+
 def IntroFunction():
     # This Function will let the player know that what program even is this. 
     text = ("""\n Hey! its Game Time,\nToday we are going to play a game known as HANGMAN. Its a bit high level game from our Guessnumber game.\nIn this game you have to guess a word letter by letter, a hanging man will be drawn side by side on your every incorrect guess.\nand you will lose when the hanging man is completely drawn unless you have guessed the word.\nSo, GooD Luck and enjoy the game """)
     # this thing or you can say FOR loop will make the text appear like anyone is typing it superfast.
-    for c in text:
-        sec = "0.0" + str(random.randrange(1, 3, 1))
-        sec = float(sec)
-        print(c,end=''),time.sleep(sec)
+    slowPrint(text)
 
     pri = ("""\nSo, lets start with some basic game things.
     What's your name ?:-""")
     # you will see it after every "string" variable.
-    for c in pri:
-        sec = "0.0" + str(random.randrange(1, 3, 1))
-        sec = float(sec)
-        print(c,end=''),time.sleep(sec)    
+    slowPrint(pri)  
 
     global name
     name = input()
     #  You can't understand it because its written in Spanish.
     Text = ("Bonito Nombre niño ")
-    for c in Text:
-        sec = "0." + str(random.randrange(1, 3, 1))
-        sec = float(sec)
-        print(c,end=''),time.sleep(sec)
+    slowPrint(Text)
 
 def SettingsFunction():
     # This Function will let the player choose his difficulty. 
     text = """
     Choose Difficulty:-\n(a) Easy\n(b) Intermediate\n(c) Hard\n(d) Pro\n(e) Master\n
-    Note:- Please write full name of difficulty, and don't toggle the case of letters. \n"""
-    for c in text:
-        sec = "0.0" + str(random.randrange(1, 5, 1))
-        sec = float(sec)
-        print(c,end=''),time.sleep(sec)
+    Note:- Please write full name of difficulty, and don't toggle the case of letters.\n"""
+    slowPrint(text)
 
     global answer
     answer = input()
@@ -138,11 +132,7 @@ def SettingsFunction():
 
     elif (answer != 'easy') or (answer != 'Easy') or (answer != 'EASY') or (answer != 'intermediate') or (answer != 'Intermediate') or (answer != 'INTERMEDIATE') or (answer != 'hard') or (answer != 'Hard') or (answer != 'HARD') or (answer != 'pro') or (answer != 'Pro') or (answer != 'PRO') or (answer != 'master') or (answer != 'Master') or (answer != 'MASTER'):
         prit = "((Error)Invalid input) please read the note written with the question."
-        for c in prit:
-            sec = "0.0" + str(random.randrange(1, 5, 1))
-            sec = float(sec)
-            print(c,end=''),time.sleep(sec)
-
+        slowPrint(prit)
         LoopFunction()
 
 def LoopFunction():
@@ -154,57 +144,59 @@ def LoopFunction():
 
 def EasyFunction():
 
-    numberofguesses = 0
-
     global answer
     
     text = "So, let's start your game."
-    for c in text:
-        sec = "0.0" + str(random.randrange(1, 5, 1))
-        sec = float(sec)
-        print(c,end=''),time.sleep(sec)
+    slowPrint(text)
   
     wordslist = ['cap','ant','fun','run','man','rub','fur','two','one','gun','pig','cow','sit','fit','lit','kit','hot','mop','lot','war','top','don','cod','net','wet','rat','mop']
     selectedword = (secrets.choice(wordslist))
     print("\n\n")
     emptyString =  "***"
-    print(emptyString)
- 
-    
+    print('Debug Only\n' + selectedword)
+    slowPrint(emptyString)
+     
     printstatement = "\n\n\nGuess a letter\n "
-                 
-    for c in printstatement:
-        sec = "0.0" + str(random.randrange(1, 5, 1))
-        sec = float(sec)
-        print(c,end=''),time.sleep(sec)
+    slowPrint(printstatement)             
 
-    Wrong = int(0)
+    Wrong = 0
 
-    for numberofguesses in range(0,len(Hangman_ascii)):
+    numberofguesses = 0
+
+    winlose = False
+
+    for numberofguesses in range(0,10):
 
         Guess = input()
         Guess = str(Guess)
         Guess = Guess.lower()
 
-        find = selectedword.find(Guess)                                              
+        finder = selectedword.find(Guess)                                              
         
-        if  (find == int(-1)):
+        if  (finder == int(-1)):
 
             global WrongAnswerList
 
-            WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers ","no es la respuesta correcta","nu răspunsul corect","正しい答えではありません","不正确的答案","정답이 아니다","niet het juiste antwoord","pas la bonne réponse","όχι η σωστή απάντηση","non è la risposta giusta","не правильный ответ","ليس الجواب الصحيح","صحیح جواب نہیں","ਸਹੀ ਜਵਾਬ ਨਹੀਂ","सही उत्तर नहीं","ius responsum non"]
-            WrongAnswerVariable = print(secrets.choice(WrongAnswerList)),range(0, 1)
+
+            WrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers "]
+            WrongAnswerVariable = print(random.choice(WrongAnswerList)),range(0, 1)
             print(Hangman_ascii[Wrong])
-            Wrong = Wrong + 1
+            Wrong = numberofguesses
             
         else:
             CorrectAnswerText = "That' a Correct one"
-            print(CorrectAnswerText)
-            # templist = list(emptyString)
-            # templist[find] = Guess
-            # emptyString = "".join(templist)
-            # print(emptyString)
+            slowPrint(CorrectAnswerText)
 
+            templist = list(emptyString)
+            templist[find] = Guess
+            emptyString = "".join(templist)
+            print(emptyString)
+
+        if(numberofguesses == 10):
+            winlose = False
+            break   
+
+        elif(emptyString == selectedword):
             
 
 EasyFunction()
