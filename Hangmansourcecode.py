@@ -162,10 +162,10 @@ def EasyFunction():
     Wrong = 0
 
     numberofguesses = 0
-
+    global winlose
     winlose = False
 
-    for numberofguesses in range(0,10):
+    for numberofguesses in range(0,1024):
 
         Guess = input()
         Guess = str(Guess)
@@ -182,24 +182,57 @@ def EasyFunction():
             WrongAnswerVariable = print(random.choice(WrongAnswerList)),range(0, 1)
             print(Hangman_ascii[Wrong])
             Wrong = numberofguesses
+
+            if (Wrong == 7):
+                winlose = False
+                break 
+                
             
         else:
-            CorrectAnswerText = "That' a Correct one"
+            CorrectAnswerText = "That' a Correct one\n"
             slowPrint(CorrectAnswerText)
 
             templist = list(emptyString)
-            templist[find] = Guess
+            templist[finder] = Guess
             emptyString = "".join(templist)
-            print(emptyString)
+            print(emptyString)   
 
-        if(numberofguesses == 10):
-            winlose = False
-            break   
-
-        elif(emptyString == selectedword):
+        if(emptyString == selectedword):
+            winlose = True 
+            break
             
+    
+   
 
-EasyFunction()
+def WinnerOrLoserCheckFunction():
+    global winlose
+    if winlose == True:
+        text = """The Game is complete. You have Guessed the letter and the HANGMAN isn't still completed.\
+             ___________
+            '._==_==_=_.'
+            .-\:      /-.
+           | (|:.     |) |
+            '-|:.     |-'
+              \::.    /
+               '::. .'
+                 ) (
+               _.' '._
+              =========\n"""
+        slowPrint(text)      
+
+    else:
+        text = "Oh! Looks like the Hangman has been completed.😞😞 Better Luck Next Time."    
+
+# printStatement = "Do you wanna play it again\n  Only 'yes' or 'no'"
+# slowPrint(printStatement)
+# loopvariable = input(str)
+# 
+# loopvariable = loopvariable.lower
+# if loopvariable == yes:
+IntroFunction()
+SettingsFunction()
+WinnerOrLoserCheckFunction()
+
 
 
 
