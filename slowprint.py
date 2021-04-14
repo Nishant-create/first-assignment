@@ -12,4 +12,4 @@ text = "this is a demo text."
 slowPrint(text)
 
 printStatement = "\nThis another demo test to check."
-slowPrint(printStatement)
+slowPrint(printStatement) 
