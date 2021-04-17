@@ -179,7 +179,8 @@ def easyFunction():
 
 
             wrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers "]
-            wrongAnswerVariable = (random.choice(wrongAnswerList)),
+            wrongAnswerVariable = (secrets
+.choice(wrongAnswerList)),
             slowPrint(wrongAnswerVariable)
             hangman_printer = ((Hangman_ascii[Wrong]) + '\n')
             slowPrint(hangman_printer)
@@ -338,7 +339,7 @@ def winnerOrLoserCheckFunction():
                '::. .'
                  ) (
                _.' '._
-              =========\n"""
+             ===========\n"""
         slowPrint(text)      
 
     elif (winlose == False):
