@@ -323,7 +323,125 @@ def hardFunction():
             winlose = True 
             break
 
-def      
+def proFunction():
+    global answer
+
+    text = "So, let's start your game."
+    slowPrint(text)         
+
+    wordslist = ["Friend","twelve","eleven","common","visual","studio","letter","source","winner","number","output","abroad","access","eagles","broken","bureau","advise","belief","gender","golden","guilty","powers","german","france","joseph","handle","yellow","walker","kadyan","inaaya","versus","unless","travel","potter","ronald","useful","exceed","extent","fright","crisis","gaming","defend"]
+    selectedword = (secrets.choice(wordslist))
+    print("\n\n")
+    emptyString =  "******"
+    slowPrint(emptyString)
+
+    printstatement = "\n\n\nGuess a letter\n "
+    slowPrint(printstatement)             
+
+    Wrong = 0
+
+    numberofguesses = 0
+    global winlose
+    winlose = False
+   
+    for numberofguesses in range(0,1024):
+
+        guess = input()
+        guess = str(guess)
+        guess = guess.lower()
+
+        finder = selectedword.find(guess)                                              
+        
+        if  (finder == int(-1)):
+
+            global wrongAnswerList
+
+
+            wrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers "]
+            wrongAnswerVariable = (random.choice(wrongAnswerList)),
+            slowPrint(wrongAnswerVariable)
+            hangman_printer = ((Hangman_ascii[Wrong]) + '\n')
+            slowPrint(hangman_printer)
+            Wrong = numberofguesses
+
+            if (Wrong == 7):
+                winlose = False
+                break 
+                
+        else:
+            correctAnswerText = "That' a Correct one\n"
+            slowPrint(correctAnswerText)
+
+            templist = list(emptyString)
+            templist[finder] = guess
+            emptyString = "".join(templist)
+            printableString = emptyString   
+
+            slowPrint(printableString)
+
+        if(emptyString == selectedword):
+            winlose = True 
+            break
+
+def masterFunction():
+    global answer
+
+    text = "So, let's start your game."
+    slowPrint(text)
+
+    wordslist = ['acquire','absence','scissor','billion','million','privacy','private','command','windows','control','silence','smoking','butcher','poacher','someone','welcome','waiting','victory','venture','problem','console','station','outline','setting','editors','unsaved','silicon','phoenix','product','nursing','network','obvious','killing','kitchen','illegal','warrior','exactly','consent','crystal','chicken','chronic','balance','bedroom','already','outpost','masters','classes','captain','compete','economy','diamond','palette']
+    selectedword = (secrets.choice(wordslist))
+    print("\n\n")
+    emptyString =  "*******"
+    slowPrint(emptyString)
+
+    printstatement = "\n\n\nGuess a letter\n "
+    slowPrint(printstatement)             
+
+    Wrong = 0
+
+    numberofguesses = 0
+    global winlose
+    winlose = False
+   
+    for numberofguesses in range(0,1024):
+
+        guess = input()
+        guess = str(guess)
+        guess = guess.lower()
+
+        finder = selectedword.find(guess)                                              
+        
+        if  (finder == int(-1)):
+
+            global wrongAnswerList
+
+
+            wrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers "]
+            wrongAnswerVariable = (random.choice(wrongAnswerList)),
+            slowPrint(wrongAnswerVariable)
+            hangman_printer = ((Hangman_ascii[Wrong]) + '\n')
+            slowPrint(hangman_printer)
+            Wrong = numberofguesses
+
+            if (Wrong == 7):
+                winlose = False
+                break 
+                
+        else:
+            correctAnswerText = "That' a Correct one\n"
+            slowPrint(correctAnswerText)
+
+            templist = list(emptyString)
+            templist[finder] = guess
+            emptyString = "".join(templist)
+            printableString = emptyString   
+
+            slowPrint(printableString)
+
+        if(emptyString == selectedword):
+            winlose = True 
+            break
 
 def winnerOrLoserCheckFunction():
     global winlose
