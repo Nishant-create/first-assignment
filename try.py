@@ -1,14 +1,10 @@
+import string
 
-a = input()
 
-w = 0
+Input = input(str)
+word = '_ _ _'
 
-for item in range( 0, 100):
-
-    if(a != "s"):
-        d = w + 1
-        print(d)
-        w = d
-
-    if(a == 's'):
-        print('loser kahin ka')    
+spiltpart = word.split()
+replacedpart = .replace(wordfinder)
+joinpart = word.join()
+print(word)
