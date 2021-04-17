@@ -1,10 +1,8 @@
-import string
+string = 'Nishant'
+index = 3
+print(string[:index])
+# tempList = list(string)
+# for item in range(0,index):
+#     print(tempList[item],end='')
 
 
-Input = input(str)
-word = '_ _ _'
-
-spiltpart = word.split()
-replacedpart = .replace(wordfinder)
-joinpart = word.join()
-print(word)
