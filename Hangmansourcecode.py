@@ -91,7 +91,7 @@ O        |
 def slowPrint(text):
     # this thing or you can say FOR loop will make the text appear like anyone is typing it superfast.
     for c in text:
-        sec = float("0.0" + str(random.randrange( 1, 5, 1)))
+        sec = float("0.00000" + str(random.randrange( 1, 5, 1)))
         print(c,end=''),time.sleep(sec)                           
 
 def introFunction():
@@ -143,6 +143,26 @@ def loopFunction():
     while (answer != 'easy') and (answer != 'Easy') and (answer != 'EASY') and (answer != 'intermediate') and (answer != 'Intermediate') and (answer != 'INTERMEDIATE') and (answer != 'hard') and (answer != 'Hard') and (answer != 'HARD') and (answer != 'pro') and (answer != 'Pro') and (answer != 'PRO') and (answer != "master") and (answer != 'Master') and (answer != 'MASTER'):
         settingsFunction() 
 
+def winnerOrLoserCheckFunction():
+    global winlose
+    if (winlose == True):
+        text = """The Game is complete. You have Guessed the letter and the HANGMAN isn't still completed.\
+             ___________
+            '._==_==_=_.'
+            .-\:      /-.
+           | (|:.     |) |
+            '-|:.     |-'
+              \::.    /
+               '::. .'
+                 ) (
+               _.' '._
+             ===========\n"""
+        slowPrint(text)      
+
+    elif (winlose == False):
+        text = "Oh! Looks like the Hangman has been completed.😞😞 Better Luck Next Time."    
+        slowPrint(text)
+
 def easyFunction():
 
     global answer
@@ -155,11 +175,14 @@ def easyFunction():
     print("\n\n")
     emptyString =  "***"
     slowPrint(emptyString)
+
      
     printstatement = "\n\n\nGuess a letter\n "
     slowPrint(printstatement)             
+    print(selectedword)
 
-    Wrong = 0
+
+    wrongguesses = 0
 
     numberofguesses = 0
     global winlose
@@ -170,8 +193,13 @@ def easyFunction():
         guess = input()
         guess = str(guess)
         guess = guess.lower()
+        
+        finder = selectedword.find(guess) 
+        
+        if guess == (''):
+            finder = (-1)
 
-        finder = selectedword.find(guess)                                              
+                                                     
         
         if  (finder == int(-1)):
 
@@ -181,11 +209,11 @@ def easyFunction():
             wrongAnswerList = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers "]
             wrongAnswerVariable = (secrets.choice(wrongAnswerList)),
             slowPrint(wrongAnswerVariable)
-            hangman_printer = ((Hangman_ascii[Wrong]) + '\n')
+            hangman_printer = ((Hangman_ascii[wrongguesses]) + '\n')
             slowPrint(hangman_printer)
-            Wrong = numberofguesses
+            wrongguesses = wrongguesses + 1
 
-            if (Wrong == 7):
+            if (wrongguesses == 7):
                 winlose = False
                 break 
                 
@@ -203,6 +231,8 @@ def easyFunction():
             winlose = True 
             break
             
+    winnerOrLoserCheckFunction()            
+
 def intermediateFunction():
     global answer
 
@@ -443,35 +473,21 @@ def masterFunction():
             winlose = True 
             break
 
-def winnerOrLoserCheckFunction():
-    global winlose
-    if (winlose == True):
-        text = """The Game is complete. You have Guessed the letter and the HANGMAN isn't still completed.\
-             ___________
-            '._==_==_=_.'
-            .-\:      /-.
-           | (|:.     |) |
-            '-|:.     |-'
-              \::.    /
-               '::. .'
-                 ) (
-               _.' '._
-             ===========\n"""
-        slowPrint(text)      
 
-    elif (winlose == False):
-        text = "Oh! Looks like the Hangman has been completed.😞😞 Better Luck Next Time."    
-        slowPrint(text)
 
-# printStatement = "Do you wanna play it again\n  Only 'yes' or 'no'"
-# slowPrint(printStatement)
-# loopvariable = input(str)
-# 
-# loopvariable = loopvariable.lower
-# if loopvariable == yes:
+
+printStatement = "Do you wanna play it again\n  Only 'yes' or 'no'"
+slowPrint(printStatement)
+loopvariable = input(str)
+
+loopvariable = loopvariable.lower
+if loopvariable == yes:
+    
+
+
 introFunction()
 settingsFunction()
-winnerOrLoserCheckFunction()
+
 
 
 
