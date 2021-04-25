@@ -248,7 +248,7 @@ def intermediateFunction():
     printstatement = "\n\n\nGuess a letter\n "
     slowPrint(printstatement)             
 
-    Wrong = 0
+    wrongguesses = 0
 
     numberofguesses = 0
     global winlose
@@ -272,9 +272,9 @@ def intermediateFunction():
             slowPrint(wrongAnswerVariable)
             hangman_printer = ((Hangman_ascii[Wrong]) + '\n')
             slowPrint(hangman_printer)
-            Wrong = numberofguesses
+            wrongguesses = wrongguesses + 1
 
-            if (Wrong == 7):
+            if (wrongguesses == 7):
                 winlose = False
                 break 
                 
@@ -292,6 +292,8 @@ def intermediateFunction():
         if(emptyString == selectedword):
             winlose = True 
             break
+
+    winnerOrLoserCheckFunction()
 
 def hardFunction():
     global answer
@@ -308,7 +310,7 @@ def hardFunction():
     printstatement = "\n\n\nGuess a letter\n "
     slowPrint(printstatement)             
 
-    Wrong = 0
+    wrongguesses = 0
 
     numberofguesses = 0
     global winlose
@@ -332,9 +334,9 @@ def hardFunction():
             slowPrint(wrongAnswerVariable)
             hangman_printer = ((Hangman_ascii[Wrong]) + '\n')
             slowPrint(hangman_printer)
-            Wrong = numberofguesses
+            wrongguesses = wrongguesses + 1
 
-            if (Wrong == 7):
+            if (wrongguesses == 7):
                 winlose = False
                 break 
                 
@@ -353,6 +355,8 @@ def hardFunction():
             winlose = True 
             break
 
+    winnerOrLoserCheckFunction()
+    
 def proFunction():
     global answer
 
@@ -368,7 +372,7 @@ def proFunction():
     printstatement = "\n\n\nGuess a letter\n "
     slowPrint(printstatement)             
 
-    Wrong = 0
+    wrongguesses = 0
 
     numberofguesses = 0
     global winlose
@@ -392,9 +396,9 @@ def proFunction():
             slowPrint(wrongAnswerVariable)
             hangman_printer = ((Hangman_ascii[Wrong]) + '\n')
             slowPrint(hangman_printer)
-            Wrong = numberofguesses
+            wrongguesses = wrongguesses + 1
 
-            if (Wrong == 7):
+            if (wrongguesses == 7):
                 winlose = False
                 break 
                 
@@ -412,6 +416,8 @@ def proFunction():
         if(emptyString == selectedword):
             winlose = True 
             break
+
+    winnerOrLoserCheckFunction()
 
 def masterFunction():
     global answer
@@ -428,7 +434,7 @@ def masterFunction():
     printstatement = "\n\n\nGuess a letter\n "
     slowPrint(printstatement)             
 
-    Wrong = 0
+    wrongguesses = 0
 
     numberofguesses = 0
     global winlose
@@ -452,9 +458,9 @@ def masterFunction():
             slowPrint(wrongAnswerVariable)
             hangman_printer = ((Hangman_ascii[Wrong]) + '\n')
             slowPrint(hangman_printer)
-            Wrong = numberofguesses
+            wrongguesses = wrongguesses + 1
 
-            if (Wrong == 7):
+            if (wrongguesses == 7):
                 winlose = False
                 break 
                 
@@ -473,17 +479,9 @@ def masterFunction():
             winlose = True 
             break
 
+    winnerOrLoserCheckFunction()
 
-
-
-printStatement = "Do you wanna play it again\n  Only 'yes' or 'no'"
-slowPrint(printStatement)
-loopvariable = input(str)
-
-loopvariable = loopvariable.lower
-if loopvariable == yes:
-    
-
+def mainfunction():
 
 introFunction()
 settingsFunction()
