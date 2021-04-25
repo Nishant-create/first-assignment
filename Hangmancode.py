@@ -2,6 +2,26 @@ import time
 import random
 import string
 
+def winnerorlosercheckfunction():
+    global winlose
+    if (winlose == True):
+        text = """The Game is complete. You have Guessed the letter and the HANGMAN isn't still completed.\
+             ___________
+            '._==_==_=_.'
+            .-\:      /-.
+           | (|:.     |) |
+            '-|:.     |-'
+              \::.    /
+               '::. .'
+                 ) (
+               _.' '._
+             ===========\n"""
+        slowprint(text)      
+
+    elif (winlose == False):
+        texty = "Oh! Looks like the Hangman has been completed.😞😞 Better Luck Next Time."    
+        slowprint(texty)
+
 def hangman():
     global hangman_ascii
     hangman_ascii = ['''
@@ -119,17 +139,17 @@ def settingsfunction():
     slowPrint(text)
 
     global answer
-    answer = input()
+    answer = input(str)
+    answer = answer.lower()
 
-    answer = str(answer.lower)
-
-def loopFunction():
+def loopfunction():
     global answer
     while answer != 'easy' and answer != 'intermediate' and answer != 'hard' and answer != 'pro' and answer != 'master':
         settingsfunction()
 
-def mainfunction():
-    global hangman_acsii
+def OBJfunction():
+
+    global hangman_ascii
     global answer
 
     easy_wordslist = ['cap','ant','fun','run','man','rub','fur','two','one','gun','pig','cow','sit','fit','lit','kit','hot','mop','lot','war','top','don','cod','net','wet','rat','mop']
@@ -160,4 +180,69 @@ def mainfunction():
 
     text = "So, let's start your game."
     slowPrint(text)
-    slowprint()
+    print('\n\n')
+    slowprint(emptystring)
+    printstatement = "\n\n\nGuess a letter\n "
+    slowprint(printstatement)             
+
+    numberofguesses = 0
+    numberofwrongguesses = 0
+    global winlose
+    winlose = False
+    
+    for numberofguesses in range(1, 1024):
+        guess = input(str)
+        guess = guess.lower
+
+        inspector = selectedword.find(guess)
+
+        if inspector == int(-1):
+            wronganswervariable = (random.choice(wronganswerlist)),
+            slowprint(wronganswervariable)
+            hangman_printer = ((hangman_ascii[numberofwrongguesses]) + '\n')
+            slowprint(hangman_printer)
+            numberofwrongguesses = numberofwrongguesses + 1
+
+            if numberofwrongguesses = len(hangman_ascii):
+                winlose = False
+                break
+
+        else:
+            correctanswertext = "That' a Correct one\n"
+            slowprint(correctanswertext)
+
+            templist = list(emptystring)
+            templist[inspector] = guess
+            emptystring = "".join(templist)
+            printabletext = emptystring   
+
+            slowprint(printabletext)
+
+        if emptystring == selectedword:
+            winlose = True
+            break   
+
+    winnerorlosercheckfunction()
+
+def mainfunction():
+    settingsfunction()
+    loopfunction()
+    OBJfunction()
+
+def loopFunction():
+
+    text = "Do you wanna play it again?\nNote : Only 'yes' or 'no'."
+
+    canihavetheanswer = input(str)
+    canihavetheanswer = canihavetheanswer.lower()
+
+    if canihavetheanswer = 'yes':
+        printvariable = "Ok then"
+        slowprint(printvariable)
+        mainfunction()
+
+    else:
+        print('\n')    
+
+introfunction()
+mainfunction()
