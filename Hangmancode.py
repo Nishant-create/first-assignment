@@ -244,5 +244,6 @@ def loopFunction():
         print('\n')    
 
 introfunction()
+settingsfunction()
 mainfunction()
 loopFunction()
