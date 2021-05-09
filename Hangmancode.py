@@ -22,6 +22,14 @@ def winnerorlosercheckfunction():
         texty = "Oh! Looks like the Hangman has been completed.😞😞 Better Luck Next Time."    
         slowprint(texty)
 
+def findFunction(selectedword, guess):
+    list_of_indices = []
+    for index,char in enumerate(selectedword):
+        if (char == guess):
+            list_of_indices.append(index)
+
+        return list_of_indices
+
 hangman_ascii = ['''
     +=========+
              |
@@ -176,7 +184,7 @@ def OBJfunction():
 
     text = "So, let's start your game."
     slowprint(text)
-    print('Debug Only' + selectedword)
+    print('\nDebug Only' + selectedword)
     print('\n\n')
     slowprint(emptystring)
     printstatement = "\n\n\nGuess a letter\n "
@@ -191,9 +199,8 @@ def OBJfunction():
         guess = input(str)
         guess = guess.lower()
 
-        inspector = selectedword.find(guess)
-        inspector = int(inspector)
-        if inspector == int(-1):
+        inspector = findFunction(selectedword, guess)
+        if len(inspector) == 0:
             wronganswerlist = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers "]
             wronganswervariable = (random.choice(wronganswerlist)),
             slowprint(wronganswervariable)
@@ -211,16 +218,19 @@ def OBJfunction():
             correctanswertext = "That' a Correct one\n"
             slowprint(correctanswertext)
 
-            templist = list(emptystring)
-            templist[inspector] = guess
-            emptystring = "".join(templist)
-            printabletext = emptystring   
-            tempList = list(printabletext)
-            tempList[inspector] = '*'
-            printabletext = "".join(tempList)
-            emptystring = printabletext 
+            for loops in range(0, len(inspector)):
+                templist = list(emptystring)
+                templist[inspector[loops]] = guess
+                emptystring = "".join(templist)
+                printabletext = emptystring
+                
 
-            slowprint(emptystring)
+            # templist = list(emptystring)
+            # templist[inspector] = guess
+            # emptystring = "".join(templist)
+            # printabletext = emptystring   
+            
+            slowprint(printabletext)
 
         if emptystring == selectedword:
             winlose = True
@@ -247,6 +257,8 @@ def loopFunction():
 
     else:
         exit()    
+
+
 
 settingsfunction()
 OBJfunction()

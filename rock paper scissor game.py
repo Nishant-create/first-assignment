@@ -10,7 +10,7 @@ def slowPrintFunction(text):
 
 def gameExplainingFunction():
     printableText ="""\nHey! welcome to another game, 
-    So, this is a Rock-Paper_scissor game. So I don't need to explain this to you.\n If you Don't know the how to play Rock-Paper_scissor than just die in the ****** hell."""
+    So, this is a Rock-Paper_scissor game. So I don't need to explain this to you.\n If you Don't know the how to play Rock-Paper_scissor than just die in the hell."""
      
     slowPrintFunction(printableText)
 
