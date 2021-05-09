@@ -126,7 +126,7 @@ def introfunction():
     
     string = "Choose your language:-"
     slowprint(string)
-    time.sleep(5)
+    inputlanguage = input()
     troll =  "Just kidding\nI only know English "
     slowprint(troll)
 
@@ -134,14 +134,13 @@ def settingsfunction():
     text = """
     Choose Difficulty:-\n(a) Easy\n(b) Intermediate\n(c) Hard\n(d) Pro\n(e) Master\n
     Note:- Please write full name of difficulty.\n"""
-    slowprint(text)
+    print(text)
 
     global answer
     answer = input(str)
     answer = answer.lower()
-
-def loopfunction():
-    global answer
+    print(answer)
+    
     while answer != 'easy' and answer != 'intermediate' and answer != 'hard' and answer != 'pro' and answer != 'master':
         settingsfunction()
 
@@ -177,6 +176,7 @@ def OBJfunction():
 
     text = "So, let's start your game."
     slowprint(text)
+    print('Debug Only' + selectedword)
     print('\n\n')
     slowprint(emptystring)
     printstatement = "\n\n\nGuess a letter\n "
@@ -197,10 +197,11 @@ def OBJfunction():
             wronganswerlist = ["Wrong guess","nononononono!","Nope this is not the right answer","Error not the input required","Its not that easy man!","Hey! you, don't give wrong answers "]
             wronganswervariable = (random.choice(wronganswerlist)),
             slowprint(wronganswervariable)
-            
             hangman_printer = ((hangman_ascii[numberofwrongguesses]) + '\n')
             slowprint(hangman_printer)
             numberofwrongguesses = numberofwrongguesses + 1
+
+            assert(numberofwrongguesses < len(hangman_ascii))
 
             if numberofwrongguesses == len(hangman_ascii):
                 winlose = False
@@ -214,8 +215,12 @@ def OBJfunction():
             templist[inspector] = guess
             emptystring = "".join(templist)
             printabletext = emptystring   
+            tempList = list(printabletext)
+            tempList[inspector] = '*'
+            printabletext = "".join(tempList)
+            emptystring = printabletext 
 
-            slowprint(printabletext)
+            slowprint(emptystring)
 
         if emptystring == selectedword:
             winlose = True
@@ -225,8 +230,8 @@ def OBJfunction():
 
 def mainfunction():
     settingsfunction()
-    loopfunction()
     OBJfunction()
+    loopFunction()
 
 def loopFunction():
 
@@ -241,9 +246,9 @@ def loopFunction():
         mainfunction()
 
     else:
-        print('\n')    
+        exit()    
 
-introfunction()
 settingsfunction()
-mainfunction()
+OBJfunction()
 loopFunction()
+
