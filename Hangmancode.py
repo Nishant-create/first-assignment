@@ -28,7 +28,7 @@ def findFunction(selectedword, guess):
         if (char == guess):
             list_of_indices.append(index)
 
-        return list_of_indices
+    return list_of_indices
 
 hangman_ascii = ['''
     +=========+
@@ -184,7 +184,7 @@ def OBJfunction():
 
     text = "So, let's start your game."
     slowprint(text)
-    print('\nDebug Only' + selectedword)
+    print('Debug Only: \n' + selectedword)
     print('\n\n')
     slowprint(emptystring)
     printstatement = "\n\n\nGuess a letter\n "
