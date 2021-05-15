@@ -1,7 +1,6 @@
 import time
 import random
 import string
-
 def winnerorlosercheckfunction():
     global winlose
     if (winlose == True):
@@ -184,7 +183,7 @@ def OBJfunction():
 
     text = "So, let's start your game."
     slowprint(text)
-    print('Debug Only: \n' + selectedword)
+    print('\nDebug Only: \n' + selectedword)
     print('\n\n')
     slowprint(emptystring)
     printstatement = "\n\n\nGuess a letter\n "
