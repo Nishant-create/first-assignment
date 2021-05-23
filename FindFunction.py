@@ -1,9 +1,6 @@
 selectedword = "roof"
-guess = "f"
+guess = "o"
 letter = enumerate(selectedword)
-# print(letter)
-# for char in enumerate(selectedword):
-    # print(char)
 def findFunction(selectedword, guess):
     list_of_indices = []
     for index,character in letter:
@@ -11,7 +8,6 @@ def findFunction(selectedword, guess):
             list_of_indices.append(index)
 
     return list_of_indices
-
 
 variable = findFunction(selectedword, guess)
 if len(variable) == 0:

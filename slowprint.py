@@ -7,7 +7,6 @@ def slowPrint(text):
         sec = float(sec)
         print(char,end=''),time.sleep(sec)
 
-
 text = "this is a demo text."
 slowPrint(text)
 
