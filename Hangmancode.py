@@ -183,8 +183,6 @@ def OBJfunction():
 
     text = "So, let's start your game."
     slowprint(text)
-    print('\nDebug Only: \n' + selectedword)
-    print('\n\n')
     slowprint(emptystring)
     printstatement = "\n\n\nGuess a letter\n "
     slowprint(printstatement)             
@@ -206,13 +204,13 @@ def OBJfunction():
             hangman_printer = ((hangman_ascii[numberofwrongguesses]) + '\n')
             slowprint(hangman_printer)
             numberofwrongguesses = numberofwrongguesses + 1
-
-            assert(numberofwrongguesses < len(hangman_ascii))
-
             if numberofwrongguesses == len(hangman_ascii):
                 winlose = False
                 break
 
+            assert(numberofwrongguesses < len(hangman_ascii))
+
+            
         else:
             correctanswertext = "That' a Correct one\n"
             slowprint(correctanswertext)
@@ -253,12 +251,15 @@ def loopFunction():
         printvariable = "Ok then"
         slowprint(printvariable)
         mainfunction()
-
+    elif canihavetheanswer == 'no':
+        exit()
     else:
-        exit()    
+        inputtext = 'This is a invalid input,plz try again! '
+        loopFunction()
+            
 
 
-
+introfunction()
 settingsfunction()
 OBJfunction()
 loopFunction()
