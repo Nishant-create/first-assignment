@@ -18,13 +18,5 @@ def fibonacciScript():
         a = a + 1
         b = b + 1
         print(fibonacciList) 
-# returnlist = [0,1]
-# a = returnlist[0] + returnlist[1]
-# returnlist.append(a)
-# a = returnlist[1]+ returnlist[2]
-# returnlist.append(a)
-# a = returnlist[2] + returnlist[3]
-# returnlist.append(a)
-# a = returnlist[3] + returnlist[4]
-# returnlist.append(a)
+
 fibonacciScript()
