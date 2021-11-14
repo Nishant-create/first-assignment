@@ -1,7 +1,9 @@
 import time
 import random
+# The string module isn't that important
 import string
 def winnerorlosercheckfunction():
+    # This function will be executed at the end of the game but I don't know why I made it first
     global winlose
     if (winlose == True):
         text = """\n\n\nThe Game is complete. You have Guessed the letter and the HANGMAN isn't still completed.\
@@ -28,7 +30,7 @@ def findFunction(selectedword, guess):
             list_of_indices.append(index)
 
     return list_of_indices
-
+# this is the list containing all hangman ascii art
 hangman_ascii = ['''
     +=========+
              |
@@ -113,6 +115,7 @@ hangman_ascii = ['''
                                _===_\n''',]
 
 def slowprint(text):
+    # This function will print the characters in a string indivisually (like in movies)
     for char in text:
         sec = float("0.00" + str(random.randrange( 1, 3, 1)))
         print(char,end=''),time.sleep(sec)
