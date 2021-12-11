@@ -4,6 +4,9 @@ import random
 # This is my personal kinda program for my minecraft world, others can also use it!
 # I actually doesn't really know how to complete it
 
+main_list = []
+
+
 def slow_print(anything):
 
     for char in anything:
@@ -20,46 +23,107 @@ keywords:
 
 edit: you can edit the co-ordinates you have entered for a place (please remeber the serial no. of those things) 
     usage: [keyword] then press enter
-           [serial no. of thing] again press enter
-           [co-ordinates] for example |12 90 -145|
+           [co-ordinates] for example (12 90 -145)
 
 show: it will show you the name and serial no. of everything you have saved 
     usage: [keyword] press enter
 
 delete: it will delete the saved variable for that place (please remember that serial no. of that thing again)
     usage: [keyword] press enter
-           [serial no. of the thing] again press enter (type 'nul' in place of serial no. and it will delete everything)
-           
+           [co-ordinates](type 'nul' in place of co-ordinates and it will delete everything)
+
 help: it will just simply show this thing again
     usage: help {press enter}\n"""
-    slow_print(text)
+    print(text)
 
-    global command
-    command = input('What can I do for you?\n:')
+    while True:
+        # slow_print('Invalid input, please try again\n')
+        command = input('debug')
 
-    while command != 'edit' and command != 'show' and command != 'delete' and command != 'help':
-        
-        slow_print('Invalid input, please try again\n')
-        command = input()
+        if command == 'edit':
+            edit_function()
 
-    if command == 'edit':
-        global TexT
-        TexT = 'sorry not completed the code yet'
-        slow_print(TexT)
+            exit
 
-    if command == 'show':
-        slow_print(TexT)
+        if command == 'show':
+            show_function()
 
-    if command == 'delete':
-        slow_print(TexT)
+            exit
 
-    if command =='help':
-        slow_print(text)
+        if command == 'delete':
+            del_function()
 
-    slow_print('Invalid input, try again')
+            exit
 
-def storage_place():
-    
+        if command =='help':
+            slow_print(text)
+
+        if command == 'nothing':
+            return command
 
 
-    introduction()
+def edit_function():
+
+    slow_print('Do you want to add or edit existing\n:')
+    add_or_edit = input()
+
+    if add_or_edit == 'add':
+        ask = input('input, what would you like to\n')
+        index = 1
+        main_list.append(ask)
+        print(main_list)
+
+
+
+
+
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+introduction()
