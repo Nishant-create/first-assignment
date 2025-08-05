@@ -1,16 +1,27 @@
-def test(n):
-    return lambda x: x + n
+#To do list
+Tasks = []
 
-string_joiner = test('bad')
+def addTask(task):
+    Tasks.append(str(task))
 
-string_joiner_1 = test('not so bad')
+def ShowTask(task):
+    for i in Tasks:
+        print(i + "\n")
 
-print(string_joiner('good'))
-print(string_joiner('medium'))
-print(string_joiner_1('good'))
-print(string_joiner_1('medium'))
+def RemoveTask(task):
+    if task in Tasks:
+        Tasks.remove(task)
+        print(task + " successfully removed")
+    else:
+        print(task + " not found")
 
-incrementor = test(50)
-
-print(incrementor(1))
-print(incrementor(5))
+print('Please type 1 to add a task \ntype 2 to view to-do list \ntype 0 to remove task')
+prompt = input()
+if prompt == 1:
+    addTask(prompt)
+elif prompt == 2:
+    ShowTask(prompt)
+elif prompt == 0:
+    RemoveTask(prompt)
+else:
+    print('Invalid Operation')
